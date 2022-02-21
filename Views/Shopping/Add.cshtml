@@ -1,0 +1,37 @@
+﻿@model Boutique.Models.BoutiqueDetails
+
+@{
+    Layout = null;
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddEmployee</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Add Boutique</h1>
+    <hr />
+    @using (Html.BeginForm())
+    {
+        <p>Enter Id:@Html.EditorFor((m)=>m.Id)</p>
+        <p>Enter  Name: @Html.EditorFor((m) => m.Name)</p>
+        <p>Enter Styles: @Html.EditorFor((m) => m.Styles)</p>
+        <p>Enter Price: @Html.EditorFor((m) => m.Price)</p>
+        <p><button>Save</button></p>
+    }
+    <div>
+        @if (ViewBag.Message != null)
+        {
+            <span style="color:red">@ViewBag.Message</span>
+        }
+    </div>
+    <div>
+        @Html.ActionLink("Back to List", "GetBoutique")
+    </div>
+</body>
+</html>

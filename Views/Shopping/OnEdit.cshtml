@@ -1,0 +1,40 @@
+﻿@model Boutique.Models.BoutiqueDetails
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Update</title>
+</head>
+<body>
+    <div>
+        <h1>Details of @Model.Name</h1>
+        @using (Html.BeginForm())
+        {
+            <p>
+                @Html.LabelFor((m) => m.Id)
+                @Html.DisplayFor((m) => m.Id)
+                @Html.HiddenFor((m) => m.Id)
+            </p>
+            <p>
+                @Html.LabelFor((m) => m.Name)
+                @Html.TextBoxFor((m) => m.Name)
+            </p>
+            <p>
+                @Html.LabelFor((m) => m.Styles)
+                @Html.TextBoxFor((m) => m.Styles)
+            </p>
+            <p>
+                @Html.LabelFor((m) => m.Price)
+                @Html.TextBoxFor((m) => m.Price)
+            </p>
+
+            <button>Save</button>
+        }
+    </div>
+</body>
+</html>

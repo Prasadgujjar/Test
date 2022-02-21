@@ -1,0 +1,44 @@
+﻿@model List<Boutique.Models.BoutiqueDetails>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Boutiques</title>
+</head>
+<body>
+    <h1>Shopping Details</h1>
+    <hr />
+    <nav>
+        @Html.ActionLink("Add new", "Add")
+        @Html.ActionLink("Remove", "OnEdit")
+    </nav>
+    <h1>List Boutique</h1><hr/>
+    <div>
+        <table border="1">
+            <tr>
+                <th>BoutiqueDetails Id</th>
+                <th>BoutiqueDetails Name</th>
+                <th>BoutiqueDetails Styles</th>
+                <th>BoutiqueDetails Price</th>
+                <th>Options</th>
+            </tr>
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <td>@i.Id</td>
+                    <td>@i.Name</td>
+                    <td>@i.Styles</td>
+                    <td>@i.Price</td>
+                    <td>@Html.ActionLink("Edit", "OnEdit", new { id = i.Id })</td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
